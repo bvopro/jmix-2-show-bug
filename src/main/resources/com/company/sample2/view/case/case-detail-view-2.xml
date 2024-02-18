@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://caseDetailView2.title"
+      focusComponent="form">
+    <data>
+        <instance id="caseDc"
+                  class="com.company.sample2.entity.Case">
+            <fetchPlan extends="_base">
+                <property name="inspections" fetchPlan="_base">
+                    <property name="agent" fetchPlan="_base"/>
+                    <property name="invoice" fetchPlan="_base"/>
+                </property>
+                <property name="owner" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader/>
+            <collection id="inspectionsDc" property="inspections"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="caseDc">
+            <textField id="referenceField" property="reference"/>
+            <entityPicker id="ownerField" property="owner">
+                <actions>
+                    <action id="entityLookup" type="entity_lookup"/>
+                    <action id="entityClear" type="entity_clear"/>
+                </actions>
+            </entityPicker>
+        </formLayout>
+        <h4 text="msg://com.company.sample2.entity/Case.inspections"/>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button action="inspectionsDataGrid.create"/>
+            <button action="inspectionsDataGrid.edit"/>
+            <button action="inspectionsDataGrid.remove"/>
+        </hbox>
+        <dataGrid id="inspectionsDataGrid" dataContainer="inspectionsDc" width="100%" minHeight="20em">
+            <actions>
+                <action id="create" type="list_create">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="edit" type="list_edit">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="remove" type="list_remove"/>
+            </actions>
+            <columns>
+                <column property="inspectionDate"/>
+                <column property="agent"/>
+            </columns>
+        </dataGrid>
+        <hbox id="detailActions">
+            <button id="saveAndCloseBtn" action="saveAction"/>
+            <button id="closeBtn" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>

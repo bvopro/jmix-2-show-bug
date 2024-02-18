@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/flowui/menu">
+
+    <menu id="application" title="msg://com.company.sample2/menu.application.title" opened="true">
+        <item view="User.list" title="msg://com.company.sample2.view.user/UserListView.title"/>
+        <item view="BaseThirdParty.list"
+              title="msg://com.company.sample2.view.basethirdparty/baseThirdPartyListView.title"/>
+        <item view="Case_.list_1" title="msg://com.company.sample2.view.case/caseListView1.title"/>
+        <item view="Case_.list_2" title="msg://com.company.sample2.view.case/caseListView2.title"/>
+        <item view="Case_.list_3" title="msg://com.company.sample2.view.case/caseListView3.title"/>
+        <item view="Inspection.list" title="msg://com.company.sample2.view.inspection/inspectionListView.title"/>
+        <item view="Invoice.list" title="msg://com.company.sample2.view.invoice/invoiceListView.title"/>
+        <item view="LegalPerson.list" title="msg://com.company.sample2.view.legalperson/legalPersonListView.title"/>
+        <item view="NaturalPerson.list"
+              title="msg://com.company.sample2.view.naturalperson/naturalPersonListView.title"/>
+    </menu>
+
+</menu-config>
