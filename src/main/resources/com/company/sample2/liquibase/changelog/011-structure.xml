@@ -58,6 +58,8 @@
             <column name="CASE_ID" type="UUID">
                 <constraints nullable="false"/>
             </column>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="timestamp with time zone"/>
         </createTable>
     </changeSet>
     <changeSet id="4" author="sample2">

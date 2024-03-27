@@ -6,7 +6,9 @@
     <data>
         <collection id="inspectionsDc"
                     class="com.company.sample2.entity.Inspection">
-            <fetchPlan extends="_base"/>
+            <fetchPlan extends="_base">
+                <property name="case" fetchPlan="_base"/>
+            </fetchPlan>
             <loader id="inspectionsDl" readOnly="true">
                 <query>
                     <![CDATA[select e from Inspection e]]>
@@ -48,6 +50,7 @@
             </actions>
             <columns resizable="true">
                 <column property="inspectionDate"/>
+                <column property="case"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">

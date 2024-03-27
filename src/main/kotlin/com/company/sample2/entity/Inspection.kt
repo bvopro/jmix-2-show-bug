@@ -1,6 +1,8 @@
 package com.company.sample2.entity
 
 import io.jmix.core.DeletePolicy
+import io.jmix.core.annotation.DeletedBy
+import io.jmix.core.annotation.DeletedDate
 import io.jmix.core.entity.annotation.JmixGeneratedValue
 import io.jmix.core.entity.annotation.OnDeleteInverse
 import io.jmix.core.metamodel.annotation.Composition
@@ -63,4 +65,11 @@ open class Inspection {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     var case: Case? = null
 
+    @DeletedBy
+    @Column(name = "DELETED_BY")
+    var deletedBy: String? = null
+
+    @DeletedDate
+    @Column(name = "DELETED_DATE")
+    var deletedDate: OffsetDateTime? = null
 }

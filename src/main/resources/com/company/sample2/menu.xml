@@ -9,6 +9,7 @@
         <item view="Case_.list_2" title="msg://com.company.sample2.view.case/caseListView2.title"/>
         <item view="Case_.list_3" title="msg://com.company.sample2.view.case/caseListView3.title"/>
         <item view="Inspection.list" title="msg://com.company.sample2.view.inspection/inspectionListView.title"/>
+        <item view="Inspection.list_1" title="msg://com.company.sample2.view.inspection/inspectionListView1.title"/>
         <item view="Invoice.list" title="msg://com.company.sample2.view.invoice/invoiceListView.title"/>
         <item view="LegalPerson.list" title="msg://com.company.sample2.view.legalperson/legalPersonListView.title"/>
         <item view="NaturalPerson.list"

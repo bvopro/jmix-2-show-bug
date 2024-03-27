@@ -5,7 +5,9 @@
     <data>
         <instance id="invoiceDc"
                   class="com.company.sample2.entity.Invoice">
-            <fetchPlan extends="_base"/>
+            <fetchPlan extends="_base">
+                <property name="inspection" fetchPlan="_base"/>
+            </fetchPlan>
             <loader/>
         </instance>
     </data>
@@ -18,6 +20,14 @@
     </actions>
     <layout>
         <formLayout id="form" dataContainer="invoiceDc">
+            <textField id="amountField" property="amount"/>
+            <entityPicker id="inspectionField" property="inspection">
+                <actions>
+                    <action id="entityLookup" type="entity_lookup"/>
+                    <action id="entityClear" type="entity_clear"/>
+                </actions>
+            </entityPicker>
+            <datePicker id="dateField" property="date"/>
         </formLayout>
         <hbox id="detailActions">
             <button id="saveAndCloseBtn" action="saveAction"/>
