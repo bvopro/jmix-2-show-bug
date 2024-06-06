@@ -9,8 +9,10 @@
               <entry key="main">
                 <value>
                   <DataStoreSettingsV2>
+                    <option name="generateDdlType" value="CREATE_AND_UPDATE" />
                     <option name="supportedTypes">
                       <option value="hsql" />
+                      <option value="postgres" />
                     </option>
                   </DataStoreSettingsV2>
                 </value>
@@ -20,5 +22,61 @@
         </ModuleSettings>
       </entry>
     </moduleSettings>
+  </component>
+  <component name="JmixDatabaseMigrationSettings">
+    <database-infos>
+      <database-info>
+        <dbms-id>mysql</dbms-id>
+        <mapping-types>
+          <mapping-type>
+            <java-class>java.time.OffsetDateTime</java-class>
+            <sql-type>DATETIME</sql-type>
+          </mapping-type>
+        </mapping-types>
+      </database-info>
+      <database-info>
+        <dbms-id>postgres</dbms-id>
+        <mapping-types>
+          <mapping-type>
+            <java-class>java.time.OffsetDateTime</java-class>
+            <sql-type>timestamp with time zone</sql-type>
+          </mapping-type>
+          <mapping-type>
+            <java-class>byte[]</java-class>
+            <sql-type>bytea</sql-type>
+          </mapping-type>
+          <mapping-type sql-type-parameter="Nothing">
+            <java-class>org.locationtech.jts.geom.Point</java-class>
+            <sql-type>point</sql-type>
+          </mapping-type>
+          <mapping-type sql-type-parameter="Nothing">
+            <java-class>org.locationtech.jts.geom.Polygon</java-class>
+            <sql-type>polygon</sql-type>
+          </mapping-type>
+        </mapping-types>
+      </database-info>
+      <database-info>
+        <dbms-id>mssql</dbms-id>
+        <mapping-types>
+          <mapping-type>
+            <java-class>java.time.OffsetDateTime</java-class>
+            <sql-type>datetimeoffset</sql-type>
+          </mapping-type>
+          <mapping-type>
+            <java-class>byte[]</java-class>
+            <sql-type>varbinary(max)</sql-type>
+          </mapping-type>
+        </mapping-types>
+      </database-info>
+      <database-info>
+        <dbms-id>oracle</dbms-id>
+        <mapping-types>
+          <mapping-type>
+            <java-class>java.util.UUID</java-class>
+            <sql-type>varchar2(32)</sql-type>
+          </mapping-type>
+        </mapping-types>
+      </database-info>
+    </database-infos>
   </component>
 </project>

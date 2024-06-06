@@ -3,6 +3,7 @@ package com.company.sample2.entity
 import io.jmix.core.annotation.DeletedBy
 import io.jmix.core.annotation.DeletedDate
 import io.jmix.core.entity.annotation.JmixGeneratedValue
+import io.jmix.core.metamodel.annotation.InstanceName
 import io.jmix.core.metamodel.annotation.JmixEntity
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedBy
@@ -50,6 +51,7 @@ open class BaseThirdParty {
     @Column(name = "DELETED_DATE")
     var deletedDate: OffsetDateTime? = null
 
+    @InstanceName
     @Column(name = "FULLNAME")
     var fullname: String? = null
 }

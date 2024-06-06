@@ -10,6 +10,8 @@ import io.jmix.core.metamodel.annotation.Composition
 import io.jmix.core.metamodel.annotation.JmixEntity
 import io.jmix.data.impl.lazyloading.NotInstantiatedList
 import jakarta.persistence.*
+import org.locationtech.jts.geom.Point
+import org.locationtech.jts.geom.Polygon
 import org.springframework.data.annotation.CreatedBy
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedBy

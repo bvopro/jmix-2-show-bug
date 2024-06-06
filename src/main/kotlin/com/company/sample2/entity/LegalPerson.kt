@@ -10,7 +10,6 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "LEGAL_PERSON")
 open class LegalPerson : BaseThirdParty() {
-    @InstanceName
     @Column(name = "NAME")
     var name: String? = null
 }

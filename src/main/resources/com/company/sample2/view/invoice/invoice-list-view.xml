@@ -6,7 +6,9 @@
     <data>
         <collection id="invoicesDc"
                     class="com.company.sample2.entity.Invoice">
-            <fetchPlan extends="_base"/>
+            <fetchPlan extends="_base">
+                <property name="inspection" fetchPlan="_base"/>
+            </fetchPlan>
             <loader id="invoicesDl" readOnly="true">
                 <query>
                     <![CDATA[select e from Invoice e]]>
@@ -47,6 +49,9 @@
                 <action id="remove" type="list_remove"/>
             </actions>
             <columns resizable="true">
+                <column property="amount"/>
+                <column property="inspection"/>
+                <column property="date"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">
