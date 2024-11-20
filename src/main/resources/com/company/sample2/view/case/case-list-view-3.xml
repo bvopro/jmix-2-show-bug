@@ -8,6 +8,8 @@
                     class="com.company.sample2.entity.Case">
             <fetchPlan extends="_base">
                 <property name="owner" fetchPlan="_base"/>
+                <property name="naturalPerson" fetchPlan="_base"/>
+                <property name="legalPerson" fetchPlan="_base"/>
             </fetchPlan>
             <loader id="casesDl" readOnly="true">
                 <query>

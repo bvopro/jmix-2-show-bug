@@ -42,6 +42,18 @@ open class Case {
     @ManyToOne(fetch = FetchType.LAZY)
     var owner: BaseThirdParty? = null
 
+    @OnDeleteInverse(DeletePolicy.DENY)
+    @OnDelete(DeletePolicy.UNLINK)
+    @JoinColumn(name = "OWNER_ID", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    var naturalPerson: NaturalPerson? = null
+
+    @OnDeleteInverse(DeletePolicy.DENY)
+    @OnDelete(DeletePolicy.UNLINK)
+    @JoinColumn(name = "OWNER_ID", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    var legalPerson: LegalPerson? = null
+
     @Column(name = "VERSION", nullable = false)
     @Version
     var version: Int? = null

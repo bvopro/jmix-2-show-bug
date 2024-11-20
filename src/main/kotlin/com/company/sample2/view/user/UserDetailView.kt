@@ -34,7 +34,7 @@ open class UserDetailView : StandardDetailView<User>() {
     @Autowired
     private lateinit var entityStates: EntityStates
 
-    @Autowired
+    @ViewComponent
     private lateinit var messageBundle: MessageBundle
 
     @Autowired
